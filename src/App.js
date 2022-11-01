@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/style.css"
+import getProjectArray from "./getProjectArray"
+import ProjectCard from "./components/ProjectCard"
 
-function App() {
+const App = () => {
+  const projectArray = getProjectArray()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header></header>
+      <main>
+        <div class="cards-container">
+          {projectArray.map((project) => {
+            return (
+              <ProjectCard
+                id={project.id}
+                key={project.id}
+                imageSrc={project.imageSrc}
+                alt={project.alt}
+                link={project.link}
+              />
+            )
+          })}
+        </div>s
+      </main>
+      <footer>Copyright © aecel 2022</footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
