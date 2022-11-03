@@ -9,6 +9,8 @@
   --dark-gray: rgb(34, 34, 34);
   --theme-color: rgb(34, 34, 34);
   --highlight-color: rgb(106, 46, 150);
+  --card-width: 500px;
+  --card-heigth: calc(var(--card-width) * 888 / 1920);
 }
 
 html,
@@ -78,8 +80,8 @@ footer {
   border-radius: 10px;
   border: none;
   background-color: #1a1a1ae1;
-  height: 160px;
-  width: 340px;
+  width: var(--card-width);
+  height: var(--card-heigth);
   box-shadow: var(--shadow);
 }
 
@@ -88,5 +90,11 @@ img {
   width: inherit;
   border-radius: inherit;
   border: inherit;
-  object-fit: cover;  
+  object-fit: cover;
+}
+
+@media (max-width: 520px) {
+  :root {
+    --card-width: 320px;
+  }
 }

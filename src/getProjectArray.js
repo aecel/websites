@@ -9,9 +9,11 @@ const getProjectArray = () => {
     require.context("./images/projects", false, /\.(png|jpe?g|svg)$/)
   )
 
+  // Change the repo name "websites" if you changed your repo name
+  const repoNameLength = "websites".length
   // Gets the name of each image
   const nameArray = imageArray.map((imageSrc) => {
-    return imageSrc.slice(24, imageSrc.indexOf("."))
+    return imageSrc.slice(repoNameLength + 15, imageSrc.indexOf("."))
   })
 
   let projectArray = []
